@@ -15,7 +15,7 @@
 
 # Quartus Prime: Generate Tcl File for Project
 # File: qstate.tcl
-# Generated on: Wed Nov 24 10:41:43 2021
+# Generated on: Wed Nov 24 11:33:43 2021
 
 # Load Quartus Prime Tcl Project package
 package require ::quartus::project
