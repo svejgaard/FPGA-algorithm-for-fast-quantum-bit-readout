@@ -500,12 +500,12 @@
         <ipxact:parameter parameterId="GUI_JTAG_ENABLED" type="bit">
           <ipxact:name>GUI_JTAG_ENABLED</ipxact:name>
           <ipxact:displayName>Allow In-System Memory Content Editor to capture and update content independently of the system clock</ipxact:displayName>
-          <ipxact:value>false</ipxact:value>
+          <ipxact:value>true</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="GUI_JTAG_ID" type="string">
           <ipxact:name>GUI_JTAG_ID</ipxact:name>
           <ipxact:displayName>The 'instance ID' of this RAM is</ipxact:displayName>
-          <ipxact:value>NONE</ipxact:value>
+          <ipxact:value>intel_3</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="GUI_INIT_FILE_LAYOUT" type="string">
           <ipxact:name>GUI_INIT_FILE_LAYOUT</ipxact:name>
