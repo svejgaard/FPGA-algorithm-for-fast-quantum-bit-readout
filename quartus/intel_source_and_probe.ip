@@ -3,14 +3,14 @@
   <ipxact:vendor>Intel Corporation</ipxact:vendor>
   <ipxact:library>intel_source_and_probe</ipxact:library>
   <ipxact:name>in_system_sources_probes_0</ipxact:name>
-  <ipxact:version>19.2.0</ipxact:version>
+  <ipxact:version>19.1</ipxact:version>
   <ipxact:busInterfaces>
     <ipxact:busInterface>
       <ipxact:name>sources</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="conduit" version="21.2"></ipxact:busType>
+      <ipxact:busType vendor="altera" library="altera" name="conduit" version="19.2"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="21.2"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="19.2"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -44,10 +44,10 @@
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>source_clk</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="clock" version="21.2"></ipxact:busType>
+      <ipxact:busType vendor="altera" library="altera" name="clock" version="19.2"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="clock" version="21.2"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="clock" version="19.2"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -81,10 +81,10 @@
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>probes</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="conduit" version="21.2"></ipxact:busType>
+      <ipxact:busType vendor="altera" library="altera" name="conduit" version="19.2"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="21.2"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="19.2"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -178,7 +178,7 @@
       <ipxact:vendor>Intel Corporation</ipxact:vendor>
       <ipxact:library>intel_source_and_probe</ipxact:library>
       <ipxact:name>altera_in_system_sources_probes</ipxact:name>
-      <ipxact:version>19.2.0</ipxact:version>
+      <ipxact:version>19.1</ipxact:version>
     </altera:entity_info>
     <altera:altera_module_parameters>
       <ipxact:parameters>
@@ -191,6 +191,11 @@
           <ipxact:name>gui_use_auto_index</ipxact:name>
           <ipxact:displayName>Automatic Instance Index Assignment</ipxact:displayName>
           <ipxact:value>true</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="sld_auto_instance_index" type="string">
+          <ipxact:name>sld_auto_instance_index</ipxact:name>
+          <ipxact:displayName>sld_auto_instance_index</ipxact:displayName>
+          <ipxact:value>YES</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="sld_instance_index" type="int">
           <ipxact:name>sld_instance_index</ipxact:name>
@@ -226,6 +231,11 @@
           <ipxact:name>create_source_clock_enable</ipxact:name>
           <ipxact:displayName>Use Source Clock Enable</ipxact:displayName>
           <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_metastability" type="string">
+          <ipxact:name>enable_metastability</ipxact:name>
+          <ipxact:displayName>enable_metastability</ipxact:displayName>
+          <ipxact:value>YES</ipxact:value>
         </ipxact:parameter>
       </ipxact:parameters>
     </altera:altera_module_parameters>

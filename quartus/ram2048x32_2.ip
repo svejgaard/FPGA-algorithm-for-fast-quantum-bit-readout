@@ -3,14 +3,14 @@
   <ipxact:vendor>Intel Corporation</ipxact:vendor>
   <ipxact:library>ram2048x32_2</ipxact:library>
   <ipxact:name>ram_1port_0</ipxact:name>
-  <ipxact:version>20.1.0</ipxact:version>
+  <ipxact:version>19.1</ipxact:version>
   <ipxact:busInterfaces>
     <ipxact:busInterface>
       <ipxact:name>data</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="conduit" version="21.2"></ipxact:busType>
+      <ipxact:busType vendor="altera" library="altera" name="conduit" version="19.2"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="21.2"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="19.2"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -54,10 +54,10 @@
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>q</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="conduit" version="21.2"></ipxact:busType>
+      <ipxact:busType vendor="altera" library="altera" name="conduit" version="19.2"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="21.2"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="19.2"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -101,10 +101,10 @@
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>address</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="conduit" version="21.2"></ipxact:busType>
+      <ipxact:busType vendor="altera" library="altera" name="conduit" version="19.2"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="21.2"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="19.2"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -148,10 +148,10 @@
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>wren</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="conduit" version="21.2"></ipxact:busType>
+      <ipxact:busType vendor="altera" library="altera" name="conduit" version="19.2"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="21.2"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="19.2"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -195,10 +195,10 @@
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>clock</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="clock" version="21.2"></ipxact:busType>
+      <ipxact:busType vendor="altera" library="altera" name="clock" version="19.2"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="clock" version="21.2"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="clock" version="19.2"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -242,10 +242,10 @@
     </ipxact:busInterface>
     <ipxact:busInterface>
       <ipxact:name>rden</ipxact:name>
-      <ipxact:busType vendor="altera" library="altera" name="conduit" version="21.2"></ipxact:busType>
+      <ipxact:busType vendor="altera" library="altera" name="conduit" version="19.2"></ipxact:busType>
       <ipxact:abstractionTypes>
         <ipxact:abstractionType>
-          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="21.2"></ipxact:abstractionRef>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="19.2"></ipxact:abstractionRef>
           <ipxact:portMaps>
             <ipxact:portMap>
               <ipxact:logicalPort>
@@ -403,7 +403,7 @@
       <ipxact:vendor>Intel Corporation</ipxact:vendor>
       <ipxact:library>ram2048x32_2</ipxact:library>
       <ipxact:name>ram_1port</ipxact:name>
-      <ipxact:version>20.1.0</ipxact:version>
+      <ipxact:version>19.1</ipxact:version>
     </altera:entity_info>
     <altera:altera_module_parameters>
       <ipxact:parameters>
@@ -429,7 +429,7 @@
         </ipxact:parameter>
         <ipxact:parameter parameterId="GUI_Clken" type="bit">
           <ipxact:name>GUI_Clken</ipxact:name>
-          <ipxact:displayName>Create one clock enable signal for each clock signal</ipxact:displayName>
+          <ipxact:displayName>Create one clock enable signal for each clock signal.</ipxact:displayName>
           <ipxact:value>false</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="GUI_CLOCK_ENABLE_INPUT_A" type="bit">
@@ -524,7 +524,7 @@
         </ipxact:parameter>
         <ipxact:parameter parameterId="GUI_PR" type="bit">
           <ipxact:name>GUI_PR</ipxact:name>
-          <ipxact:displayName>Implement clock-enable circuitry for use in a partial reconfiguration region</ipxact:displayName>
+          <ipxact:displayName>Implement clock-enable circuitry for use in a  partial reconfiguration region</ipxact:displayName>
           <ipxact:value>false</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="GUI_WIDTH_A" type="int">
@@ -555,7 +555,7 @@
         <ipxact:parameter parameterId="GUI_OPTIMIZATION_OPTION" type="int">
           <ipxact:name>GUI_OPTIMIZATION_OPTION</ipxact:name>
           <ipxact:displayName>Which timing/power optimization option do you want to use?</ipxact:displayName>
-          <ipxact:value>0</ipxact:value>
+          <ipxact:value>1</ipxact:value>
         </ipxact:parameter>
         <ipxact:parameter parameterId="GUI_RAM_BLOCK_TYPE" type="string">
           <ipxact:name>GUI_RAM_BLOCK_TYPE</ipxact:name>
@@ -585,7 +585,27 @@
         <ipxact:parameter parameterId="GUI_MIFfilename" type="string">
           <ipxact:name>GUI_MIFfilename</ipxact:name>
           <ipxact:displayName>File name</ipxact:displayName>
-          <ipxact:value>C:/Users/andreas/Documents/Master_Thesis/FPGA-algorithm-for-fast-quantum-bit-readout/quartus/mem2_init_file.mif</ipxact:value>
+          <ipxact:value>C:/Users/aleca/Documents/Git_projects/FPGA-algorithm-for-fast-quantum-bit-readout/quartus/mem2_init_file.mif</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="GUI_WIDTHAD_A" type="int">
+          <ipxact:name>GUI_WIDTHAD_A</ipxact:name>
+          <ipxact:displayName></ipxact:displayName>
+          <ipxact:value>11</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="GUI_BYTE_WIDTH" type="int">
+          <ipxact:name>GUI_BYTE_WIDTH</ipxact:name>
+          <ipxact:displayName></ipxact:displayName>
+          <ipxact:value>4</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="GUI_MODULE_NAME" type="string">
+          <ipxact:name>GUI_MODULE_NAME</ipxact:name>
+          <ipxact:displayName></ipxact:displayName>
+          <ipxact:value>altera_syncram</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="GUI_RESOURCE_USAGE" type="string">
+          <ipxact:name>GUI_RESOURCE_USAGE</ipxact:name>
+          <ipxact:displayName>Resource Usage</ipxact:displayName>
+          <ipxact:value>32 M20K</ipxact:value>
         </ipxact:parameter>
       </ipxact:parameters>
     </altera:altera_module_parameters>
