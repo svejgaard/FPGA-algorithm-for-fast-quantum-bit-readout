@@ -1,4 +1,4 @@
-# Copyright (C) 2021  Intel Corporation. All rights reserved.
+# Copyright (C) 2019  Intel Corporation. All rights reserved.
 # Your use of Intel Corporation's design tools, logic functions 
 # and other software and tools, and any partner logic 
 # functions, and any output files from any of the foregoing 
@@ -15,7 +15,7 @@
 
 # Quartus Prime: Generate Tcl File for Project
 # File: qstate.tcl
-# Generated on: Wed Nov 24 11:33:43 2021
+# Generated on: Wed Nov 24 18:03:37 2021
 
 # Load Quartus Prime Tcl Project package
 package require ::quartus::project
@@ -44,17 +44,17 @@ if {$make_assignments} {
 	set_global_assignment -name TOP_LEVEL_ENTITY top
 	set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.2.0
 	set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:04:45  OCTOBER 27, 2021"
-	set_global_assignment -name LAST_QUARTUS_VERSION "21.2.0 Pro Edition"
+	set_global_assignment -name LAST_QUARTUS_VERSION "19.2.0 Pro Edition"
+	set_global_assignment -name DEVICE 1SM21BHU2F53E1VG
+	set_global_assignment -name FAMILY "Stratix 10"
 	set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 	set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 	set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
-	set_global_assignment -name DEVICE 1SM21BHU2F53E1VG
-	set_global_assignment -name FAMILY "Stratix 10"
 	set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 	set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim (VHDL)"
 	set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 	set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
-	set_global_assignment -name PROJECT_IP_REGENERATION_POLICY NEVER_REGENERATE_IP
+	set_global_assignment -name PROJECT_IP_REGENERATION_POLICY ALWAYS_REGENERATE_IP
 	set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 	set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
 	set_global_assignment -name MINIMUM_SEU_INTERVAL 0
@@ -67,6 +67,7 @@ if {$make_assignments} {
 	set_global_assignment -name PWRMGT_SLAVE_DEVICE0_ADDRESS 47
 	set_global_assignment -name PWRMGT_PAGE_COMMAND_ENABLE ON
 	set_global_assignment -name DEVICE_INITIALIZATION_CLOCK OSC_CLK_1_125MHZ
+	set_global_assignment -name SDC_FILE jtag_constraints.sdc
 	set_global_assignment -name SDC_FILE constraints.sdc
 	set_global_assignment -name IP_FILE intel_source_and_probe.ip
 	set_global_assignment -name IP_FILE ram2048x32_0.ip
@@ -101,6 +102,9 @@ if {$make_assignments} {
 	set_global_assignment -name VHDL_FILE ../src/adder.vhd
 	set_global_assignment -name VHDL_FILE ../src/subtractor.vhd
 	set_global_assignment -name VHDL_FILE ../src/comparator.vhd
+	set_global_assignment -name ENABLE_SIGNALTAP ON
+	set_global_assignment -name USE_SIGNALTAP_FILE stp_file.stp
+	set_global_assignment -name SIGNALTAP_FILE stp_file.stp
 	set_location_assignment PIN_AU17 -to clk
 	set_instance_assignment -name IO_STANDARD LVDS -to clk -entity top
 	set_location_assignment PIN_AU16 -to "clk(n)"

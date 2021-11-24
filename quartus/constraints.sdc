@@ -36,8 +36,7 @@ set_time_format -unit ns -decimal_places 3
 #**************************************************************
 # Create Clock
 #**************************************************************
-create_clock -name {altera_reserved_tck} -period 41.667 [get_ports { altera_reserved_tck }]
-create_clock -period "100MHz"   [get_ports { clk }]
+create_clock -period "100MHz"   [get_ports {clk}]
 
 
 
@@ -62,14 +61,9 @@ derive_clock_uncertainty
 # Set Input Delay
 #**************************************************************
 
-set_input_delay -clock altera_reserved_tck -clock_fall -max 5 [get_ports altera_reserved_tdi]
-set_input_delay -clock altera_reserved_tck -clock_fall -max 5 [get_ports altera_reserved_tms]
-
 #**************************************************************
 # Set Output Delay
 #**************************************************************
-
-set_output_delay -clock altera_reserved_tck 5 [get_ports altera_reserved_tdo]
 
 #**************************************************************
 # Set Clock Group
@@ -79,9 +73,6 @@ set_output_delay -clock altera_reserved_tck 5 [get_ports altera_reserved_tdo]
 #**************************************************************
 # False path
 #**************************************************************
-
-set_false_path -from [get_ports {altera_reserved_ntrst}]
-
 
 # treating reset_n input pin as async signals
 set_false_path -from [get_ports {reset_n}]
