@@ -33,7 +33,9 @@ package data_formats is
 	constant output_MSB				: integer := signal_length*2-1;
 
 	-- TIMING
-	constant FINAL_ADDRESS  		: integer := 1379;
+	constant FINAL_ADDRESS  		: integer := 1385;
+	constant MAX_COUNT_VALUE 		: unsigned(31 downto 0) 			:= x"000003FF"; -- 1023, for simulation
+	-- constant MAX_COUNT_VALUE 	: unsigned(31 downto 0) 			:= x"59682F00"; -- 15s @ 100MHz: WAIT_TIME / (1 / CLK_SPEED)
 
 
 
