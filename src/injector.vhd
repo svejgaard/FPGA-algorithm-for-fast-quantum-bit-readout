@@ -72,8 +72,6 @@ architecture behavioral of injector is
 	signal enable   			: std_logic 						:= '0';
 	signal address 				: std_logic_vector(10 downto 0) 	:= (others => '0');
 	signal rden 				: std_logic 						:= '0';
-	constant MAX_COUNT_VALUE 	: unsigned(31 downto 0) 			:= x"000003FF"; -- 1023, for simulation
-	-- constant MAX_COUNT_VALUE 	: unsigned(31 downto 0) 			:= x"59682F00"; -- 15s @ 100MHz: WAIT_TIME / (1 / CLK_SPEED)
 	signal ram_out_0 			: std_logic_vector(33 downto 0)		:= (others => '0');
 	signal ram_out_1 			: std_logic_vector(33 downto 0)		:= (others => '0');
 	signal ram_out_2 			: std_logic_vector(33 downto 0)		:= (others => '0');
