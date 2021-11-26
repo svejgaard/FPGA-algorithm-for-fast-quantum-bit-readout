@@ -40,6 +40,7 @@ architecture behavioral of qstate is
 	end component;
 
 	signal input_data_ready		: std_logic_vector(3 downto 0)						:= (others => '0');
+	signal clear_registers_n	: std_logic 										:= '1';
 	signal address 				: std_logic_vector(ADDRESS_WIDTH-1 downto 0)		:= (others => '0');
 	signal rden 				: std_logic 										:= '0';
 	signal data_sig_0			: std_logic_vector(input_MSB downto 0)				:= (others => '0');
@@ -79,6 +80,7 @@ CON0 			: entity work.control port map (
 	reset_n 			=> reset_n,
 	input_data_ready 	=> input_data_ready,
 	-- outputs
+	clear_registers_n 	=> clear_registers_n,
 	address 			=> address,
 	rden 				=> rden,
 	stop 				=> stop,
@@ -119,7 +121,7 @@ DOT0 			: entity work.dot_product_module port map (
 INT0			: entity work.integrator port map (
 	-- inputs
 	clk 		=> clk,
-	reset_n 	=> reset_n,
+	reset_n 	=> clear_registers_n,
 	input 		=> dotproduct,
 	-- outputs
 	integral 	=> integral
