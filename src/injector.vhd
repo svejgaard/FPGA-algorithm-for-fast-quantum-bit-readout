@@ -92,17 +92,23 @@ begin
 			if trig = '1' then
 				enable <= '1';
 			end if;
-
 			if enable = '1' and (counter < MAX_COUNT_VALUE) then
 				counter <= counter + 1;
 			end if;
-
 			if counter = MAX_COUNT_VALUE then
 				start <= '1';
 				rden <= '1';
+				enable <= '0';
+				counter <= (others => '0');
 			end if;
+
 			if rden = '1' then
 				address <= std_logic_vector(unsigned(address) + 1);
+			end if;
+			if unsigned(address) = FINAL_ADDRESS then
+				rden <= '0';
+				start <= '0';
+				address <= (others => '0');
 			end if;
 		end if;
 	end if;
