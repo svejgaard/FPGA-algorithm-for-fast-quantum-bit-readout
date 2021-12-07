@@ -1,13 +1,15 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.fixed_pkg.all;
-
 
 library work;
 use work.data_formats.all;
 
 
-entity qstate is port(
+entity qstate is
+generic(
+	qstate_id 		: std_logic_vector(3 downto 0)
+);
+port(
 	clk				: in std_logic;
 	reset_n 		: in std_logic;
 	sample_A		: in std_logic_vector(input_MSB downto 0);
@@ -27,17 +29,6 @@ end entity qstate;
 
 
 architecture behavioral of qstate is
-
-	component ram2x32_0 is
-		port (
-			data    : in  std_logic_vector(31 downto 0) 							:= (others => 'X'); -- datain
-			q       : out std_logic_vector(31 downto 0);                    							-- dataout
-			address : in  std_logic_vector(0 downto 0)  							:= (others => 'X'); -- address
-			wren    : in  std_logic                     							:= 'X';             -- wren
-			clock   : in  std_logic                     							:= 'X';             -- clk
-			rden    : in  std_logic                     							:= 'X'              -- rden
-		);
-	end component;
 
 	signal input_data_ready		: std_logic_vector(3 downto 0)						:= (others => '0');
 	signal clear_registers_n	: std_logic 										:= '1';
@@ -104,7 +95,11 @@ DEL0 			: entity work.delay port map (
 	data_out_D 			=> data_sig_3
 );
 
-DOT0 			: entity work.dot_product_module port map (
+DOT0 			: entity work.dot_product_module
+generic map (
+	qstate_id 		=> qstate_id
+)
+port map (
 	-- inputs
 	clk 		=> clk,
 	reset_n 	=> reset_n,
@@ -127,16 +122,19 @@ INT0			: entity work.integrator port map (
 	integral 	=> integral
 );
 
-intel_ram_initialization_2 : if INTEL generate
+
+MEAN_RAM_INTEL_gen : if INTEL generate
 begin
-RAM4 	: component ram2x32_0 port map (
-	data 	=> (others => '0'),
-	q 		=> mean,
-	address => "" & '0',
-	wren 	=> '0',
-	clock 	=> clk,
-	rden	=> '1'
-);
+	MRI0	: entity work.mean_ram_intel 
+	generic map(
+		qstate_id 	=> qstate_id
+	)
+	port map (
+		-- inputs
+		clk 		=> clk,
+		-- outputs
+		mean		=> mean
+	);
 end generate;
 
 SUB0		: entity work.subtractor port map (

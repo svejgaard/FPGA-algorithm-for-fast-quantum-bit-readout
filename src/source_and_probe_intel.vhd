@@ -21,22 +21,13 @@ architecture behavioral of source_and_probe_intel is
 		);
 	end component intel_source_and_probe;
 
-	--signal source_vec 	: std_logic_vector(0 downto 0)		:= "0";
-	--signal probe_vec 	: std_logic_vector(0 downto 0)		:= "0";
-
 begin
-
-	--source <= source_vec(0);
-	--probe_vec <= "" & probe;
-	--probe_vec(0) <= probe;
 
 	u0 : component intel_source_and_probe
 		port map (
-			source(0) => source,
-			--source 			=> source_vec,
-			source_clk 		=> clk,
-			probe(0)  => probe
-			--probe 			=> probe_vec
+			source(0) 	=> source,
+			source_clk 	=> clk,
+			probe(0)  	=> probe
 		);
 
 end behavioral;

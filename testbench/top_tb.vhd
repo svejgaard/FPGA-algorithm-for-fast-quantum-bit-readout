@@ -6,7 +6,7 @@
 -- Author      : User Name <user.email@user.company.com>
 -- Company     : User Company Name
 -- Created     : Thu Nov 18 00:20:33 2021
--- Last update : Tue Nov 23 18:02:58 2021
+-- Last update : Fri Nov 26 13:19:37 2021
 -- Platform    : Default Part Number
 -- Standard    : <VHDL-2008 | VHDL-2002 | VHDL-1993 | VHDL-1987>
 --------------------------------------------------------------------------------
@@ -72,6 +72,10 @@ begin
 		reset_n <= '0';
 		wait for 20 ns;
 		reset_n <= '1';
+		wait for 25000 ns;
+		reset_n <= '0';
+		wait for 20 ns;
+		reset_n <= '1';
 
 		wait;
 	end process RESET_GEN;
@@ -82,6 +86,10 @@ begin
 	STIMULUS : process
 	begin
 		wait for 160 ns;
+		test_trig <= '1';
+		wait for 10 ns;
+		test_trig <= '0';
+		wait for 25100 ns;
 		test_trig <= '1';
 		wait for 10 ns;
 		test_trig <= '0';

@@ -15,7 +15,7 @@
 
 # Quartus Prime: Generate Tcl File for Project
 # File: qstate.tcl
-# Generated on: Wed Nov 24 11:33:43 2021
+# Generated on: Tue Dec  7 13:11:39 2021
 
 # Load Quartus Prime Tcl Project package
 package require ::quartus::project
@@ -67,18 +67,49 @@ if {$make_assignments} {
 	set_global_assignment -name PWRMGT_SLAVE_DEVICE0_ADDRESS 47
 	set_global_assignment -name PWRMGT_PAGE_COMMAND_ENABLE ON
 	set_global_assignment -name DEVICE_INITIALIZATION_CLOCK OSC_CLK_1_125MHZ
+	set_global_assignment -name SDC_FILE jtag_constraints.sdc
 	set_global_assignment -name SDC_FILE constraints.sdc
 	set_global_assignment -name IP_FILE intel_source_and_probe.ip
-	set_global_assignment -name IP_FILE ram2048x32_0.ip
-	set_global_assignment -name IP_FILE ram2048x32_1.ip
-	set_global_assignment -name IP_FILE ram2048x32_2.ip
-	set_global_assignment -name IP_FILE ram2048x32_3.ip
-	set_global_assignment -name MIF_FILE mem0_init_file.mif
-	set_global_assignment -name MIF_FILE mem1_init_file.mif
-	set_global_assignment -name MIF_FILE mem2_init_file.mif
-	set_global_assignment -name MIF_FILE mem3_init_file.mif
-	set_global_assignment -name IP_FILE ram2x32_0.ip
-	set_global_assignment -name MIF_FILE mean_mem0_init_file.mif
+	set_global_assignment -name IP_FILE ram2048x32_A0.ip
+	set_global_assignment -name IP_FILE ram2048x32_A1.ip
+	set_global_assignment -name IP_FILE ram2048x32_A2.ip
+	set_global_assignment -name IP_FILE ram2048x32_A3.ip
+	set_global_assignment -name IP_FILE ram2048x32_B0.ip
+	set_global_assignment -name IP_FILE ram2048x32_B1.ip
+	set_global_assignment -name IP_FILE ram2048x32_B2.ip
+	set_global_assignment -name IP_FILE ram2048x32_B3.ip
+	set_global_assignment -name IP_FILE ram2048x32_C0.ip
+	set_global_assignment -name IP_FILE ram2048x32_C1.ip
+	set_global_assignment -name IP_FILE ram2048x32_C2.ip
+	set_global_assignment -name IP_FILE ram2048x32_C3.ip
+	set_global_assignment -name IP_FILE ram2048x32_D0.ip
+	set_global_assignment -name IP_FILE ram2048x32_D1.ip
+	set_global_assignment -name IP_FILE ram2048x32_D2.ip
+	set_global_assignment -name IP_FILE ram2048x32_D3.ip
+	set_global_assignment -name IP_FILE ram2048x32_E0.ip
+	set_global_assignment -name IP_FILE ram2048x32_E1.ip
+	set_global_assignment -name IP_FILE ram2048x32_E2.ip
+	set_global_assignment -name IP_FILE ram2048x32_E3.ip
+	set_global_assignment -name IP_FILE ram2048x32_F0.ip
+	set_global_assignment -name IP_FILE ram2048x32_F1.ip
+	set_global_assignment -name IP_FILE ram2048x32_F2.ip
+	set_global_assignment -name IP_FILE ram2048x32_F3.ip
+	set_global_assignment -name IP_FILE ram2048x32_G0.ip
+	set_global_assignment -name IP_FILE ram2048x32_G1.ip
+	set_global_assignment -name IP_FILE ram2048x32_G2.ip
+	set_global_assignment -name IP_FILE ram2048x32_G3.ip
+	set_global_assignment -name IP_FILE ram2048x32_H0.ip
+	set_global_assignment -name IP_FILE ram2048x32_H1.ip
+	set_global_assignment -name IP_FILE ram2048x32_H2.ip
+	set_global_assignment -name IP_FILE ram2048x32_H3.ip
+	set_global_assignment -name IP_FILE ram2x32_A0.ip
+	set_global_assignment -name IP_FILE ram2x32_B0.ip
+	set_global_assignment -name IP_FILE ram2x32_C0.ip
+	set_global_assignment -name IP_FILE ram2x32_D0.ip
+	set_global_assignment -name IP_FILE ram2x32_E0.ip
+	set_global_assignment -name IP_FILE ram2x32_F0.ip
+	set_global_assignment -name IP_FILE ram2x32_G0.ip
+	set_global_assignment -name IP_FILE ram2x32_H0.ip
 	set_global_assignment -name IP_FILE intel_ram2048x34_0.ip
 	set_global_assignment -name IP_FILE intel_ram2048x34_1.ip
 	set_global_assignment -name IP_FILE intel_ram2048x34_2.ip
@@ -99,6 +130,7 @@ if {$make_assignments} {
 	set_global_assignment -name VHDL_FILE ../src/integrator.vhd
 	set_global_assignment -name VHDL_FILE ../src/register32.vhd
 	set_global_assignment -name VHDL_FILE ../src/adder.vhd
+	set_global_assignment -name VHDL_FILE ../src/mean_ram_intel.vhd
 	set_global_assignment -name VHDL_FILE ../src/subtractor.vhd
 	set_global_assignment -name VHDL_FILE ../src/comparator.vhd
 	set_location_assignment PIN_AU17 -to clk

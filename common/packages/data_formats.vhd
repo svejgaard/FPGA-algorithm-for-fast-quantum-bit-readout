@@ -12,13 +12,13 @@ package data_formats is
 
 
 	-- CONFIGURATION
-	constant XILINX					: std_logic := '0';
-	constant INTEL					: std_logic := not XILINX;
+	constant XILINX					: boolean := false;
+	constant INTEL					: boolean := not XILINX;
 
 	constant NO_OF_MODULES			: integer := 1;
 	constant NO_OF_RAM				: integer := 4;
 
-	constant FIFO_DEPTH				: integer := 0;
+	constant NO_OF_DIMENSIONS		: integer := 4;
 
 
 	-- SIGNAL LENGTHS

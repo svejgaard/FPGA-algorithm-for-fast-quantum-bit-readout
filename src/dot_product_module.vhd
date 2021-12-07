@@ -5,7 +5,11 @@ use ieee.fixed_pkg.all;
 library work;
 use work.data_formats.all;
 
-entity dot_product_module is port(
+entity dot_product_module is
+generic(
+	qstate_id 		: std_logic_vector(3 downto 0)
+);
+port(
 	clk				: in std_logic;
 	reset_n 		: in std_logic;
 	rden			: in std_logic;
@@ -48,12 +52,16 @@ begin
 
 	intel_ram_initialization : if INTEL generate
 	begin
-	PCRAM_INTEL : entity work.pc_ram_intel port map (
+	PCRAM_INTEL : entity work.pc_ram_intel 
+	generic map (
+		qstate_id 	=> qstate_id
+	)
+	port map (
 		-- inputs
-		clk => clk,
-		reset_n => reset_n,
-		rden => rden,
-		address => address,
+		clk 		=> clk,
+		reset_n 	=> reset_n,
+		rden 		=> rden,
+		address 	=> address,
 		-- outputs
 		pc_0 => pc_0,
 		pc_1 => pc_1,
