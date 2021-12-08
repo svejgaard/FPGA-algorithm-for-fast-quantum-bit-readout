@@ -39,12 +39,46 @@ if { $IP_CORES == 1 } {
 	# # Call command to elaborate your design and testbench.
 	# elab_debug
 
-	# vcom -2008 $BASE_PATH/quartus/ram2048x32/sim/ram2048x32.vhd
-	vcom -2008 $BASE_PATH\quartus/ram2048x32_0/sim/ram2048x32_0.vhd
-	vcom -2008 $BASE_PATH\quartus/ram2048x32_1/sim/ram2048x32_1.vhd
-	vcom -2008 $BASE_PATH\quartus/ram2048x32_2/sim/ram2048x32_2.vhd
-	vcom -2008 $BASE_PATH\quartus/ram2048x32_3/sim/ram2048x32_3.vhd
-	vcom -2008 $BASE_PATH\quartus/ram2x32_0/sim/ram2x32_0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_A0/sim/ram2048x32_A0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_A1/sim/ram2048x32_A1.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_A2/sim/ram2048x32_A2.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_A3/sim/ram2048x32_A3.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2x32_A0/sim/ram2x32_A0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_B0/sim/ram2048x32_B0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_B1/sim/ram2048x32_B1.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_B2/sim/ram2048x32_B2.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_B3/sim/ram2048x32_B3.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2x32_B0/sim/ram2x32_B0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_C0/sim/ram2048x32_C0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_C1/sim/ram2048x32_C1.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_C2/sim/ram2048x32_C2.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_C3/sim/ram2048x32_C3.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2x32_C0/sim/ram2x32_C0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_D0/sim/ram2048x32_D0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_D1/sim/ram2048x32_D1.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_D2/sim/ram2048x32_D2.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_D3/sim/ram2048x32_D3.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2x32_D0/sim/ram2x32_D0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_E0/sim/ram2048x32_E0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_E1/sim/ram2048x32_E1.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_E2/sim/ram2048x32_E2.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_E3/sim/ram2048x32_E3.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2x32_E0/sim/ram2x32_E0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_F0/sim/ram2048x32_F0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_F1/sim/ram2048x32_F1.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_F2/sim/ram2048x32_F2.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_F3/sim/ram2048x32_F3.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2x32_F0/sim/ram2x32_F0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_G0/sim/ram2048x32_G0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_G1/sim/ram2048x32_G1.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_G2/sim/ram2048x32_G2.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_G3/sim/ram2048x32_G3.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2x32_G0/sim/ram2x32_G0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_H0/sim/ram2048x32_H0.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_H1/sim/ram2048x32_H1.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_H2/sim/ram2048x32_H2.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2048x32_H3/sim/ram2048x32_H3.vhd
+	vcom -2008 $BASE_PATH\quartus/ram2x32_H0/sim/ram2x32_H0.vhd
 	vcom -2008 $BASE_PATH\quartus/intel_ram2048x34_0/sim/intel_ram2048x34_0.vhd
 	vcom -2008 $BASE_PATH\quartus/intel_ram2048x34_1/sim/intel_ram2048x34_1.vhd
 	vcom -2008 $BASE_PATH\quartus/intel_ram2048x34_2/sim/intel_ram2048x34_2.vhd
@@ -61,7 +95,7 @@ if { $COMPONENT == "adder_tree_A" || $COMPONENT == "adder_tree_B"} {
 	vcom -2008 $COMPONENT_PATH/adder.vhd
 } 
 if { $COMPONENT == "subtractor"} {
-	vcom -2008 $COMPONENT_PATH/mean_register.vhd
+	# vcom -2008 $COMPONENT_PATH/mean_register.vhd
 }
 if { $COMPONENT == "integrator"} {
 	vcom -2008 $COMPONENT_PATH/adder.vhd
@@ -81,7 +115,7 @@ if { $COMPONENT == "qstate"} {
 	vcom -2008 $COMPONENT_PATH/adder.vhd
 	vcom -2008 $COMPONENT_PATH/register32.vhd
 	vcom -2008 $COMPONENT_PATH/integrator.vhd
-	vcom -2008 $COMPONENT_PATH/mean_register.vhd
+	vcom -2008 $COMPONENT_PATH/mean_ram_intel.vhd
 	vcom -2008 $COMPONENT_PATH/subtractor.vhd
 	vcom -2008 $COMPONENT_PATH/comparator.vhd
 
@@ -91,7 +125,7 @@ if { $COMPONENT == "generator"} {
 	vcom -2008 $COMPONENT_PATH/generator_ram_intel.vhd
 }
 if { $COMPONENT == "top"} {
-	vcom -2008 $BASE_PATH/quartus/intel_ram2048x130/sim/intel_ram2048x130.vhd
+	# vcom -2008 $BASE_PATH/quartus/intel_ram2048x130/sim/intel_ram2048x130.vhd
 	vcom -2008 $COMPONENT_PATH/injector.vhd
 
 	vcom -2008 $COMPONENT_PATH/control.vhd
@@ -101,7 +135,7 @@ if { $COMPONENT == "top"} {
 	vcom -2008 $COMPONENT_PATH/adder.vhd
 	vcom -2008 $COMPONENT_PATH/register32.vhd
 	vcom -2008 $COMPONENT_PATH/integrator.vhd
-	vcom -2008 $COMPONENT_PATH/mean_register.vhd
+	vcom -2008 $COMPONENT_PATH/mean_ram_intel.vhd
 	vcom -2008 $COMPONENT_PATH/subtractor.vhd
 	vcom -2008 $COMPONENT_PATH/comparator.vhd
 	vcom -2008 $COMPONENT_PATH/qstate.vhd

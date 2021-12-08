@@ -1,0 +1,18 @@
+*.log 
+**/logs 
+ 
+# for now leave all folders in quartus/ out of repo 
+quartus/**/
+quartus/ 
+analysis/
+
+src/temp/
+ 
+testbench/libraries 
+testbench/modelsim* 
+testbench/
+ 
+testbench/dot_product_module_tb.vhd 
+testbench/qstate_tb.vhd 
+*.mif 
+*.ver

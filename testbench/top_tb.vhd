@@ -6,7 +6,7 @@
 -- Author      : User Name <user.email@user.company.com>
 -- Company     : User Company Name
 -- Created     : Thu Nov 18 00:20:33 2021
--- Last update : Fri Nov 26 13:19:37 2021
+-- Last update : Wed Dec  8 20:15:18 2021
 -- Platform    : Default Part Number
 -- Standard    : <VHDL-2008 | VHDL-2002 | VHDL-1993 | VHDL-1987>
 --------------------------------------------------------------------------------
@@ -45,10 +45,17 @@ architecture testbench of top_tb is
 	signal clk          : std_logic;
 	signal reset_n      : std_logic;
 	signal test_trig 	: std_logic 						   := '0';
-	signal result       : std_logic_vector(input_MSB downto 0) := (others => '0');
-	signal state        : std_logic                            := '0';
-	signal valid  		: std_logic                            := '0';
-	signal stop			: std_logic                            := '0';
+	signal result_0     : std_logic_vector(input_MSB downto 0) := (others => '0');
+	signal result_1     : std_logic_vector(input_MSB downto 0) := (others => '0');
+	signal result_2     : std_logic_vector(input_MSB downto 0) := (others => '0');
+	signal result_3     : std_logic_vector(input_MSB downto 0) := (others => '0');
+	signal result_4     : std_logic_vector(input_MSB downto 0) := (others => '0');
+	signal result_5     : std_logic_vector(input_MSB downto 0) := (others => '0');
+	signal result_6     : std_logic_vector(input_MSB downto 0) := (others => '0');
+	signal result_7     : std_logic_vector(input_MSB downto 0) := (others => '0');
+	signal state        : std_logic_vector(7 downto 0)         := (others => '0');
+	signal valid  		: std_logic_vector(7 downto 0)         := (others => '0');
+	signal stop_sig		: std_logic_vector(7 downto 0)         := (others => '0');
 
 	-- Other constants
 	constant C_CLK_PERIOD : real := 10.0e-9; -- NS
@@ -105,10 +112,17 @@ begin
 			clk          => clk,
 			reset_n      => reset_n,
 			test_trig 	 => test_trig,
-			result       => result,
+			result_0     => result_0,
+			result_1     => result_1,
+			result_2     => result_2,
+			result_3     => result_3,
+			result_4     => result_4,
+			result_5     => result_5,
+			result_6     => result_6,
+			result_7     => result_7,
 			state        => state,
 			valid    	 => valid,
-			stop 		 => stop
+			stop_sig	 => stop_sig
 		);
 
 end architecture testbench;

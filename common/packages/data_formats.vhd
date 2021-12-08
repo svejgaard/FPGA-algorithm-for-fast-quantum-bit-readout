@@ -18,7 +18,7 @@ package data_formats is
 	constant NO_OF_MODULES			: integer := 1;
 	constant NO_OF_RAM				: integer := 4;
 
-	constant NO_OF_DIMENSIONS		: integer := 4;
+	constant NO_OF_DIMENSIONS		: integer := 1;
 
 
 	-- SIGNAL LENGTHS
