@@ -3,7 +3,9 @@
  
 # for now leave all folders in quartus/ out of repo 
 quartus/**/
-quartus/ 
+quartus/
+vivado2018v3/
+
 analysis/
 
 src/temp/

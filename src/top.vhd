@@ -47,7 +47,7 @@ begin
 QSTATE_gen 	: for i in 0 to NO_OF_DIMENSIONS-1 generate
 	QST 		: entity work.qstate
 	generic map (
-		qstate_id 		=> std_logic_vector(to_unsigned(i, 4))
+		qstate_id 		=> std_logic_vector(to_unsigned(i, 3))
 	)
 	port map (
 		-- inputs
@@ -78,6 +78,8 @@ result_5 <= result(5);
 result_6 <= result(6);
 result_7 <= result(7);
 
+intel_injector_gen	: if INTEL generate
+begin
 INI0		: entity work.injector port map (
 	-- inputs
 	clk 			=> clk,
@@ -95,13 +97,37 @@ INI0		: entity work.injector port map (
 	sample_C 		=> sample_C,
 	sample_D 		=> sample_D
 );
+end generate;
+xilinx_injector_gen	: if XILINX generate
+begin
+INX0		: entity work.injector_xilinx port map (
+	-- inputs
+	clk 			=> clk,
+	reset_n 		=> reset_n,
+	trig 			=> trigger_sig,
+	-- trig 		=> test_trig, --simulation
+	-- outputs
+	start 			=> start,
+	sample_valid_A 	=> sample_valid_A,
+	sample_valid_B 	=> sample_valid_B,
+	sample_valid_C 	=> sample_valid_C,
+	sample_valid_D 	=> sample_valid_D,
+	sample_A 		=> sample_A,
+	sample_B 		=> sample_B,
+	sample_C 		=> sample_C,
+	sample_D 		=> sample_D
+);
+end generate;
 
-SNP0		: entity work.source_and_probe_intel port map(
+intel_source_and_probe_gen 	: if INTEL generate
+begin
+SP0		: entity work.source_and_probe_intel port map(
 	-- inputs
 	clk 			=> clk,
 	probe 			=> stop_sig(0),
 	-- outputs
 	source 			=> trigger_sig
 );
+end generate;
 
 end behavioral;

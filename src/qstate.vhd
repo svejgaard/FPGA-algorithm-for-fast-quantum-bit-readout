@@ -7,7 +7,7 @@ use work.data_formats.all;
 
 entity qstate is
 generic(
-	qstate_id 		: std_logic_vector(3 downto 0)
+	qstate_id 		: std_logic_vector(2 downto 0)
 );
 port(
 	clk				: in std_logic;
@@ -123,9 +123,22 @@ INT0			: entity work.integrator port map (
 );
 
 
-MEAN_RAM_INTEL_gen : if INTEL generate
+mean_ram_intel_gen : if INTEL generate
 begin
 	MRI0	: entity work.mean_ram_intel 
+	generic map(
+		qstate_id 	=> qstate_id
+	)
+	port map (
+		-- inputs
+		clk 		=> clk,
+		-- outputs
+		mean		=> mean
+	);
+end generate;
+mean_ram_xilinx_gen : if INTEL generate
+begin
+	MRX0	: entity work.mean_ram_xilinx 
 	generic map(
 		qstate_id 	=> qstate_id
 	)

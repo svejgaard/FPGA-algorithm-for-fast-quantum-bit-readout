@@ -1,13 +1,18 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.fixed_pkg.all;
+
+-- use ieee.fixed_pkg.all;
+-- since fixed_pkg is not implemented in Vivado 2018.3 (though it is VHDL 2008 standard):
+library ieee_proposed;
+use ieee_proposed.fixed_pkg.all;
+
 
 library work;
 use work.data_formats.all;
 
 entity dot_product_module is
 generic(
-	qstate_id 		: std_logic_vector(3 downto 0)
+	qstate_id 		: std_logic_vector(2 downto 0)
 );
 port(
 	clk				: in std_logic;
@@ -53,6 +58,25 @@ begin
 	intel_ram_initialization : if INTEL generate
 	begin
 	PCRAM_INTEL : entity work.pc_ram_intel 
+	generic map (
+		qstate_id 	=> qstate_id
+	)
+	port map (
+		-- inputs
+		clk 		=> clk,
+		reset_n 	=> reset_n,
+		rden 		=> rden,
+		address 	=> address,
+		-- outputs
+		pc_0 => pc_0,
+		pc_1 => pc_1,
+		pc_2 => pc_2,
+		pc_3 => pc_3
+	);
+	end generate;
+	xilinx_ram_initialization : if XILINX generate
+	begin
+	PCRAM_XILINX : entity work.pc_ram_xilinx 
 	generic map (
 		qstate_id 	=> qstate_id
 	)

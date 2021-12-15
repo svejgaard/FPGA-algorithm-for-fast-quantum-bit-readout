@@ -1,6 +1,9 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.fixed_pkg.all;
+-- use ieee.fixed_pkg.all;
+-- since fixed_pkg is not implemented in Vivado 2018.3 (though it is VHDL 2008 standard):
+library ieee_proposed;
+use ieee_proposed.fixed_pkg.all;
 
 library work;
 use work.data_formats.all;
