@@ -158,21 +158,4 @@ end process;
 		rden	=> rden
 	);
 
-	-- 	GRI0 : entity work.injector_ram_intel port map(
-	-- 		-- inputs
-	-- 		clk => clk,
-	-- 		reset_n => reset_n,
-	-- 		address => address,
-	-- 		rden => rden,
-	-- 		-- outputs
-	-- 		sample_ready_A => sample_valid_A,
-	-- 		sample_ready_B => sample_valid_B,
-	-- 		sample_ready_C => sample_valid_C,
-	-- 		sample_ready_D => sample_valid_D,
-	-- 		sample_A => sample_A,
-	-- 		sample_B => sample_B,
-	-- 		sample_C => sample_C,
-	-- 		sample_D => sample_D,
-	-- 	);
-
 end behavioral;

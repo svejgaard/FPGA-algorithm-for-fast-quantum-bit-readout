@@ -12,13 +12,13 @@ package data_formats is
 
 
 	-- CONFIGURATION
-	constant XILINX					: boolean := false;
+	constant XILINX					: boolean := true;
 	constant INTEL					: boolean := not XILINX;
 
 	constant NO_OF_MODULES			: integer := 1;
 	constant NO_OF_RAM				: integer := 4;
-
-	constant NO_OF_DIMENSIONS		: integer := 1;
+	constant NO_OF_DIMENSIONS		: integer := 3;
+	constant max_qstate_id   		: unsigned(2 downto 0) := "111";
 
 
 	-- SIGNAL LENGTHS
@@ -33,9 +33,11 @@ package data_formats is
 	constant output_MSB				: integer := signal_length*2-1;
 
 	-- TIMING
-	constant FINAL_ADDRESS  		: integer := 1385;
-	-- constant MAX_COUNT_VALUE 	: unsigned(31 downto 0) 			:= x"000003FF"; -- 1023, for simulation
-	constant MAX_COUNT_VALUE 		: unsigned(31 downto 0) 			:= x"59682F00"; -- 15s @ 100MHz: WAIT_TIME / (1 / CLK_SPEED)
+	constant ALGORITHM_LATENCY		: integer := 12;
+	-- constant FINAL_ADDRESS  		: integer := 1385;
+	constant FINAL_ADDRESS  		: integer := 460; -- 1801 / 4 => 451 + 9 = 460
+	constant MAX_COUNT_VALUE 		: unsigned(31 downto 0) 			:= x"000003FF"; -- 1023, for simulation
+	-- constant MAX_COUNT_VALUE 		: unsigned(31 downto 0) 			:= x"59682F00"; -- 15s @ 100MHz: WAIT_TIME / (1 / CLK_SPEED)
 
 
 

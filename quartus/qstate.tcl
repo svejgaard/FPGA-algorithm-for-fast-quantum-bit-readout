@@ -15,7 +15,7 @@
 
 # Quartus Prime: Generate Tcl File for Project
 # File: qstate.tcl
-# Generated on: Tue Dec  7 13:11:39 2021
+# Generated on: Wed Feb 23 16:34:15 2022
 
 # Load Quartus Prime Tcl Project package
 package require ::quartus::project
@@ -67,6 +67,7 @@ if {$make_assignments} {
 	set_global_assignment -name PWRMGT_SLAVE_DEVICE0_ADDRESS 47
 	set_global_assignment -name PWRMGT_PAGE_COMMAND_ENABLE ON
 	set_global_assignment -name DEVICE_INITIALIZATION_CLOCK OSC_CLK_1_125MHZ
+	set_global_assignment -name VHDL_FILE ../common/packages/fixed_pkg_2008.vhd -library ieee_proposed
 	set_global_assignment -name SDC_FILE jtag_constraints.sdc
 	set_global_assignment -name SDC_FILE constraints.sdc
 	set_global_assignment -name IP_FILE intel_source_and_probe.ip
@@ -119,24 +120,28 @@ if {$make_assignments} {
 	set_global_assignment -name MIF_FILE injector_mem2_init_file.mif
 	set_global_assignment -name MIF_FILE injector_mem3_init_file.mif
 	set_global_assignment -name VHDL_FILE ../common/packages/data_formats.vhd
-	set_global_assignment -name VHDL_FILE ../src/top.vhd
+	set_global_assignment -name VHDL_FILE ../src/intel/top.vhd
 	set_global_assignment -name VHDL_FILE ../src/source_and_probe_intel.vhd
 	set_global_assignment -name VHDL_FILE ../src/injector.vhd
 	set_global_assignment -name VHDL_FILE ../src/qstate.vhd
 	set_global_assignment -name VHDL_FILE ../src/control.vhd
 	set_global_assignment -name VHDL_FILE ../src/delay.vhd
 	set_global_assignment -name VHDL_FILE ../src/dot_product_module.vhd
+	set_global_assignment -name VHDL_FILE ../src/pc_ram_xilinx.vhd
 	set_global_assignment -name VHDL_FILE ../src/pc_ram_intel.vhd
 	set_global_assignment -name VHDL_FILE ../src/integrator.vhd
 	set_global_assignment -name VHDL_FILE ../src/register32.vhd
 	set_global_assignment -name VHDL_FILE ../src/adder.vhd
+	set_global_assignment -name VHDL_FILE ../src/mean_ram_xilinx.vhd
 	set_global_assignment -name VHDL_FILE ../src/mean_ram_intel.vhd
 	set_global_assignment -name VHDL_FILE ../src/subtractor.vhd
 	set_global_assignment -name VHDL_FILE ../src/comparator.vhd
-	set_location_assignment PIN_AU17 -to clk
-	set_instance_assignment -name IO_STANDARD LVDS -to clk -entity top
-	set_location_assignment PIN_AU16 -to "clk(n)"
 	set_location_assignment PIN_BL14 -to reset_n
+	set_location_assignment PIN_AU17 -to clk
+	set_location_assignment PIN_AU16 -to "clk(n)"
+	set_instance_assignment -name IO_STANDARD LVDS -to clk -entity top
+	set_instance_assignment -name PARTITION_COLOUR 4294942808 -to top -entity top
+	set_instance_assignment -name PARTITION_COLOUR 4294924672 -to auto_fab_0 -entity top
 
 	# Commit assignments
 	export_assignments

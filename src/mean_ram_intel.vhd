@@ -6,7 +6,7 @@ use work.data_formats.all;
 
 entity mean_ram_intel is 
 generic(
-	qstate_id 		: std_logic_vector(3 downto 0)
+	qstate_id 		: std_logic_vector(2 downto 0)
 );
 port(
 	clk				: in std_logic;
@@ -109,7 +109,7 @@ architecture behavioral of mean_ram_intel is
 
 begin
 
-	RAM4_gen : if qstate_id = "0000" generate
+	RAM4_gen : if qstate_id = "000" generate
 
 		RAM4 : component ram2x32_A0 port map (
 			data 	=> (others => '0'),
@@ -120,7 +120,7 @@ begin
 			rden	=> '1'
 		);
 
-	elsif qstate_id = "0001" generate
+	elsif qstate_id = "001" generate
 
 		RAM4 : component ram2x32_B0 port map (
 			data 	=> (others => '0'),
@@ -131,7 +131,7 @@ begin
 			rden	=> '1'
 		);
 
-		elsif qstate_id = "0010" generate
+		elsif qstate_id = "010" generate
 		RAM4 : component ram2x32_C0 port map (
 			data 	=> (others => '0'),
 			q 		=> mean,
@@ -142,7 +142,7 @@ begin
 		);
 
 
-		elsif qstate_id = "0011" generate
+		elsif qstate_id = "011" generate
 		RAM4 : component ram2x32_D0 port map (
 			data 	=> (others => '0'),
 			q 		=> mean,
@@ -152,7 +152,7 @@ begin
 			rden	=> '1'
 		);
 
-		elsif qstate_id = "0100" generate
+		elsif qstate_id = "100" generate
 		RAM4 : component ram2x32_E0 port map (
 			data 	=> (others => '0'),
 			q 		=> mean,
@@ -162,7 +162,7 @@ begin
 			rden	=> '1'
 		);
 
-		elsif qstate_id = "0101" generate
+		elsif qstate_id = "101" generate
 		RAM4 : component ram2x32_F0 port map (
 			data 	=> (others => '0'),
 			q 		=> mean,
@@ -172,7 +172,7 @@ begin
 			rden	=> '1'
 		);
 
-		elsif qstate_id = "0110" generate
+		elsif qstate_id = "110" generate
 		RAM4 : component ram2x32_G0 port map (
 			data 	=> (others => '0'),
 			q 		=> mean,
@@ -182,7 +182,7 @@ begin
 			rden	=> '1'
 		);
 
-		elsif qstate_id = "0111" generate
+		elsif qstate_id = "111" generate
 		RAM4 : component ram2x32_H0 port map (
 			data 	=> (others => '0'),
 			q 		=> mean,

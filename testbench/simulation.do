@@ -88,6 +88,8 @@ if { $IP_CORES == 1 } {
 
 # vcom -2008 $COMMON_SIMULATION_PATH/simulation_basics.vhd
 vcom -2008 $PACKAGE_PATH/data_formats.vhd
+# vlib ieee_proposed
+# vcom -2008 -work ieee_proposed $PACKAGE_PATH/fixed_pkg_2008.vhd
 
 
 
@@ -130,11 +132,13 @@ if { $COMPONENT == "top"} {
 
 	vcom -2008 $COMPONENT_PATH/control.vhd
 	vcom -2008 $COMPONENT_PATH/delay.vhd
+	vcom -2008 $COMPONENT_PATH/pc_ram_xilinx.vhd
 	vcom -2008 $COMPONENT_PATH/pc_ram_intel.vhd
 	vcom -2008 $COMPONENT_PATH/dot_product_module.vhd	
 	vcom -2008 $COMPONENT_PATH/adder.vhd
 	vcom -2008 $COMPONENT_PATH/register32.vhd
 	vcom -2008 $COMPONENT_PATH/integrator.vhd
+	vcom -2008 $COMPONENT_PATH/mean_ram_xilinx.vhd
 	vcom -2008 $COMPONENT_PATH/mean_ram_intel.vhd
 	vcom -2008 $COMPONENT_PATH/subtractor.vhd
 	vcom -2008 $COMPONENT_PATH/comparator.vhd
@@ -142,17 +146,19 @@ if { $COMPONENT == "top"} {
 
 	vcom -2008 $BASE_PATH/quartus/intel_source_and_probe/sim/intel_source_and_probe.vhd
 	vcom -2008 $COMPONENT_PATH/source_and_probe_intel.vhd
+	vcom -2008 $COMPONENT_PATH/intel/top.vhd
+
 }
 
 # the top component should be compiled AFTER all sub-files have been compiled
-if { $COMPONENT != "ram2048x32" } {
+if { $COMPONENT != "top" } {
 	# # since .vhd files from IP cores are placed in /quartus/sim, and this is simulated in the section if IP_CORES == 1 above 
 	vcom -2008 $COMPONENT_PATH/$COMPONENT.vhd
 }
 
 vcom -2008 $TESTBENCH_PATH/$COMPONENT\_tb.vhd
 # vsim -t 100ps $COMPONENT\_tb
-vsim -t 1ns $COMPONENT\_tb
+vsim -t 10ps $COMPONENT\_tb
 
 do $TESTBENCH_PATH/$COMPONENT\_wave.do
 # do $TESTBENCH_PATH/wave.do

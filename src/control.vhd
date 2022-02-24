@@ -12,8 +12,8 @@ entity control is port(
 	clear_registers_n 	: out std_logic 									:= '1';
 	address 			: out std_logic_vector(ADDRESS_WIDTH-1 downto 0)	:= (others => '0');
 	rden 				: out std_logic										:= '0';
-	stop				: out std_logic 									:= '0';
-	valid				: out std_logic 									:= '0'
+	stop				: out std_logic 									:= '0'
+-- 	valid				: out std_logic 									:= '0'
 );
 end entity control;
 

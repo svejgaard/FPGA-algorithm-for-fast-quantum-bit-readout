@@ -21,7 +21,7 @@ port(
 	sample_valid_C	: in std_logic;
 	sample_valid_D	: in std_logic;
 	stop 			: out std_logic 												:= '0';
-	valid			: out std_logic 												:= '0';
+-- 	valid			: out std_logic 												:= '0';
 	state			: out std_logic 												:= '0';
 	result			: out std_logic_vector(input_MSB downto 0)						:= (others => '0')
 );
@@ -74,8 +74,8 @@ CON0 			: entity work.control port map (
 	clear_registers_n 	=> clear_registers_n,
 	address 			=> address,
 	rden 				=> rden,
-	stop 				=> stop,
-	valid 				=> valid
+	stop 				=> stop
+-- 	valid 				=> valid
 );
 
 
@@ -136,7 +136,7 @@ begin
 		mean		=> mean
 	);
 end generate;
-mean_ram_xilinx_gen : if INTEL generate
+mean_ram_xilinx_gen : if XILINX generate
 begin
 	MRX0	: entity work.mean_ram_xilinx 
 	generic map(

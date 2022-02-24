@@ -32,7 +32,7 @@ architecture behavioral of injector_xilinx is
 			dina    : in  std_logic_vector(33 downto 0) 			:= (others => 'X'); -- datain
 			douta   : out std_logic_vector(33 downto 0);			                    -- dataout
 			addra   : in  std_logic_vector(10 downto 0) 			:= (others => 'X'); -- address
-			wea     : in  std_logic                     			:= 'X';             -- wren
+			wea     : in  std_logic_vector(0 downto 0)    		    := (others => 'X'); -- wren
 			clka    : in  std_logic                     			:= 'X';             -- clk
 			ena     : in  std_logic                     			:= 'X'              -- rden
 		);
@@ -42,7 +42,7 @@ architecture behavioral of injector_xilinx is
 			dina    : in  std_logic_vector(33 downto 0) 			:= (others => 'X'); -- datain
 			douta   : out std_logic_vector(33 downto 0);			                    -- dataout
 			addra   : in  std_logic_vector(10 downto 0) 			:= (others => 'X'); -- address
-			wea     : in  std_logic                     			:= 'X';             -- wren
+			wea     : in  std_logic_vector(0 downto 0)    		    := (others => 'X'); -- wren
 			clka    : in  std_logic                     			:= 'X';             -- clk
 			ena     : in  std_logic                     			:= 'X'              -- rden
 		);
@@ -52,7 +52,7 @@ architecture behavioral of injector_xilinx is
 			dina    : in  std_logic_vector(33 downto 0) 			:= (others => 'X'); -- datain
 			douta   : out std_logic_vector(33 downto 0);			                    -- dataout
 			addra   : in  std_logic_vector(10 downto 0) 			:= (others => 'X'); -- address
-			wea     : in  std_logic                     			:= 'X';             -- wren
+			wea     : in  std_logic_vector(0 downto 0)    		    := (others => 'X'); -- wren
 			clka    : in  std_logic                     			:= 'X';             -- clk
 			ena     : in  std_logic                     			:= 'X'              -- rden
 		);
@@ -62,12 +62,12 @@ architecture behavioral of injector_xilinx is
 			dina    : in  std_logic_vector(33 downto 0) 			:= (others => 'X'); -- datain
 			douta   : out std_logic_vector(33 downto 0);			                    -- dataout
 			addra   : in  std_logic_vector(10 downto 0) 			:= (others => 'X'); -- address
-			wea     : in  std_logic                     			:= 'X';             -- wren
+			wea     : in  std_logic_vector(0 downto 0)    		    := (others => 'X'); -- wren
 			clka    : in  std_logic                     			:= 'X';             -- clk
 			ena     : in  std_logic                     			:= 'X'              -- rden
 		);
 	end component ram2048x34_3;
-
+	signal trig_registered		: std_logic 						:= '0';
 	signal counter 				: unsigned(31 downto 0)				:= (others => '0');
 	signal enable   			: std_logic 						:= '0';
 	signal address 				: std_logic_vector(10 downto 0) 	:= (others => '0');
@@ -83,13 +83,15 @@ TIM0 : process(clk)
 begin
 	if rising_edge(clk) then
 		if reset_n = '0' then
+			trig_registered <= '0';
 			enable <= '0';
 			start <= '0';
 			counter <= (others => '0');
 			rden <= '0';
 			address <= (others => '0');
 		else 
-			if trig = '1' then
+			trig_registered <= trig;
+			if trig_registered = '0' and trig = '1' then
 				enable <= '1';
 			end if;
 			if enable = '1' and (counter < MAX_COUNT_VALUE) then
@@ -129,7 +131,7 @@ end process;
 		dina    => (others => '0'),
 		douta   => ram_out_0,
 		addra   => address,
-		wea     => '0',
+		wea     => "" & '0',
 		clka    => clk,
 		ena     => rden
 	);
@@ -137,7 +139,7 @@ end process;
 		dina    => (others => '0'),
 		douta   => ram_out_1,
 		addra   => address,
-		wea     => '0',
+		wea     => "" & '0',
 		clka    => clk,
 		ena     => rden
 	);
@@ -145,7 +147,7 @@ end process;
 		dina    => (others => '0'),
 		douta   => ram_out_2,
 		addra   => address,
-		wea     => '0',
+		wea     => "" & '0',
 		clka    => clk,
 		ena     => rden
 	);
@@ -153,7 +155,7 @@ end process;
 		dina    => (others => '0'),
 		douta   => ram_out_3,
 		addra   => address,
-		wea     => '0',
+		wea     => "" & '0',
 		clka    => clk,
 		ena     => rden
 	);
